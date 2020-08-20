@@ -1,0 +1,27 @@
+{
+  "name": "bigcareerfest-workshop-1",
+  "version": "1.0.0",
+  "description": "Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:prod-heroku": "ENV NODE_ENV=production NODE_PRODUCTION_PLATFORM=heroku node index.js",
+    "start:dev": "ENV NODE_ENV=development NODE_PRODUCTION_PLATFORM=localhost node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danorel/BigCareerFest-Workshop-1.git"
+  },
+  "author": "Danyil Orel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danorel/BigCareerFest-Workshop-1/issues"
+  },
+  "homepage": "https://github.com/danorel/BigCareerFest-Workshop-1#readme",
+  "dependencies": {
+    "axios": "latest",
+    "dotenv": "latest",
+    "telegraf": "latest",
+    "chai": "latest"
+  }
+}

@@ -53,9 +53,9 @@ switch (platform) {
             bot.telegram.setWebhook(`${url}/bot${token}`);
             bot.startWebhook(`/bot${token}`, null, port);
         } else
-            bot.startPolling();
+            console.error("Cannot start bot on Heroku platform with development mode");
         break;
-
+l
     case 'localhost':
         console.log("Defined production platform - Localhost. Automatic mode - development.");
         (async () => {

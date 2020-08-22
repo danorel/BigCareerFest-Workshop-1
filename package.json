@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:prod-heroku": "ENV NODE_ENV=production NODE_PRODUCTION_PLATFORM=heroku node index.js",
-    "start:dev": "ENV NODE_ENV=development NODE_PRODUCTION_PLATFORM=localhost node index.js"
+    "start:dev": "cross-env NODE_ENV=development NODE_PRODUCTION_PLATFORM=localhost node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,15 @@
   },
   "homepage": "https://github.com/danorel/BigCareerFest-Workshop-1#readme",
   "dependencies": {
-    "axios": "latest",
+    "axios": "^0.20.0",
     "chai": "latest",
+    "cross-env": "^7.0.2",
     "dotenv": "latest",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "node-telegram-bot-api": "^0.50.0",
-    "telegraf": "^3.38.0"
+    "telegraf": "^3.38.0",
+    "universal-analytics": "^0.4.23"
   },
   "directories": {
     "test": "test"

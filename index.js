@@ -5,7 +5,7 @@ const {
     mode,
     platform
 } = require('./configs/application');
-
+console.log(mode);
 /* Read environment config variables */
 switch (mode) {
     case 'development':
@@ -55,7 +55,7 @@ switch (platform) {
         } else
             console.error("Cannot start bot on Heroku platform with development mode");
         break;
-l
+
     case 'localhost':
         console.log("Defined production platform - Localhost. Automatic mode - development.");
         (async () => {

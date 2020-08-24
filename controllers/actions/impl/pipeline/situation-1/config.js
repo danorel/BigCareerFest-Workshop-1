@@ -1,5 +1,7 @@
 module.exports = {
-    msgStart: `Супер! Тоді перше питання. Після проходження онлайн навчання та закінчення карантину буде потрібно працювати у відділенні банку на фулл тайм. Чи підходить Вам подібний графік роботи?`,
-    msgCase2: `Чудово, дякую за відповідь) Ви зможете більш детально обговорити розклад із менеджером під час першої телефонної співбесіди. Тоді перейдемо до наступного запитання. Чи маєте Ви готове резюме?`,
-    msgCase1: `Чудово, дякую за відповідь) Тоді наступне питання. Чи маєте Ви готове резюме?`
+    msgStart: ` “Oh! Do you want to order our delicious pizza? It’s the best choice for you!”`,
+    msgYes: `“I’m cooking the most wonderful pizza in the world! Just wait approximately 5 minutes for the order to be prepared...”`,
+    msgNo: `“Hey! Just try our test piece of pizza. You will be captivated by the taste...”
+
+    `
 };

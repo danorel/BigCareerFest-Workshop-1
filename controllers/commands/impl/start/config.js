@@ -1,3 +1,3 @@
 module.exports = {
-    msgStart: `Привіт! Дякую, що зацікавилися вакансією від ProCredit Bank, ми дуже цінуємо Ваш відгук. Щоб пройти на наступні етапи відбору ми просимо Вас відповісти на декілька простих запитань. Це займе всього навсього 5-10 хв. Готові?`
+    msgStart: `Hi, welcome to our pizza-club, buddy! What do you like to purchase?`,
 };

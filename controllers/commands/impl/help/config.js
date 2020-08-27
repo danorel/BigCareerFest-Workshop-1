@@ -1,8 +1,8 @@
 module.exports = {
     msgHelp: `Тримай увесь мій список команд:
 
-/help - Весь список команд
-/start - Почни співбесіду вже зараз!
-/support - Потрібна допомога? Звертайся до @TrnsHmnst
-/feedback - Напиши свій фідбек про мене архітектору - @danorel`
+/help - All commands
+/start - Start bot
+/support - Hey, have any troubleshoots? Just tell @danorel about any problem. We will do everything to solve it!
+`
 };

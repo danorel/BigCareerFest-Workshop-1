@@ -45,6 +45,7 @@ bot.catch(
 /* Log current application state mode */
 console.log(`Defined application mode: ${mode}`);
 
+console.log(token)
 /* Implement the production */
 switch (platform) {
     case 'heroku':
@@ -59,12 +60,18 @@ switch (platform) {
     case 'localhost':
         console.log("Defined production platform - Localhost. Automatic mode - development.");
         (async () => {
-            const response = await axios.get(`https://api.telegram.org/bot${token}/deleteWebhook`);
-            if (response.data.ok) {
-                console.log("Webhook was successfully removed.");
-                bot.startPolling();
-            } else
-                console.log("Webhook was failed to be removed. Cannot start development mode.");
+            try{
+                const response = await axios.get(`https://api.telegram.org/bot${token}/setWebhook?url=`);
+                if (response.data.ok) {
+                    console.log("Webhook was successfully removed.");
+                    bot.startPolling();
+                } else
+                    console.log("Webhook was failed to be removed. Cannot start development mode.");
+            }
+            catch (e){
+                console.log(e)
+            }
+
         })();
         break;
 

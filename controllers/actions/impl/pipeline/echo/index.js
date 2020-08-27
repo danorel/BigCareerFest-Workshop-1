@@ -26,11 +26,13 @@ bot.hears(msgQuestion, ctx => {
 })
 
 bot.hears(msgYes, ctx => {
-    ctx.reply(msgAnswerYes)
+    ctx.reply(msgAnswerYes,
+        Extra.markup((m) => m.removeKeyboard()))
 })
 
 bot.hears(msgNo, ctx => {
-    ctx.reply(msgAnswerNo)
+    ctx.reply(msgAnswerNo,
+        Extra.markup((m) => m.removeKeyboard()))
 })
 
 // Echo all messages, which are not handled above
@@ -38,7 +40,8 @@ bot.on('text',
     ctx => {
         /* Echo the message */
         ctx.reply(
-            ctx.update.message.text
+            ctx.update.message.text,
+            Extra.markup((m) => m.removeKeyboard())
         );
     }
 );

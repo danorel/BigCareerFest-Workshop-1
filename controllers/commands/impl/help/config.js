@@ -1,5 +1,5 @@
 module.exports = {
-    msgHelp: `Тримай увесь мій список команд:
+    msgHelp: `Here are all of my commands:
 
 /help - All commands
 /start - Start bot

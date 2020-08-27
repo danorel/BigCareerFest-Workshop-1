@@ -3,9 +3,7 @@ const {
     Extra
 } = require('../../../../../configs/telegram/bot');
 
-const { msgStart } = require('./config');
-const { msgYes }= require('./config');
-const { msgNo }=require('./config');
+const { msgStart, msgYes, msgNo } = require('./config');
 
 bot.action('ActionHandlerWantPizza',
     ctx => {
@@ -19,8 +17,8 @@ bot.action('ActionHandlerWantPizza',
             msgStart,
             Extra.HTML().markup((m) =>
                 m.inlineKeyboard([
-                    m.callbackButton('Yes', 'ActionHandlerCase1'),
-                    m.callbackButton('No', 'ActionHandlerCase2')
+                    m.callbackButton('Yes', 'ActionHandlerOrder'),
+                    m.callbackButton('No', 'ActionHandlerReject')
                 ])
             )
         );
@@ -38,7 +36,7 @@ bot.action("ActionHandlerDon'tWantPizza",
         ctx.reply(msgNo);
     }
 );
-bot.action('ActionHandlerCase1',
+bot.action('ActionHandlerOrder',
     ctx => {
         const { from: { id, username } } = ctx.update.callback_query;
         console.log({
@@ -48,15 +46,16 @@ bot.action('ActionHandlerCase1',
         /* Write down new user in temporary storage */
        
             ctx.reply(msgYes);
+            // ctx.replyWithPhoto("images\pizza.jpg");
         
     }
 );
-bot.on('message', (msg) =>{
-    const { from: { id, username } } = ctx.update.callback_query;
-    console.log(id);
-    bot.sendMessage(id,JSON.stringify(msg));
-}
+bot.on('message', 
+    ctx => {
+        ctx.reply(ctx.update.message.text)
+        
+    });
+    
 
 
-)
 // git commit -m "[Short description of the features, bugs, errors, blabla] Detailed information about this featurem, fixed bug, etc"

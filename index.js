@@ -5,7 +5,7 @@ const {
     mode,
     platform
 } = require('./configs/application');
-console.log(mode);
+
 /* Read environment config variables */
 switch (mode) {
     case 'development':

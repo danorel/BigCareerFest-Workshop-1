@@ -40,7 +40,9 @@ require('./controllers/commands');
 
 /* Import telegram user-actions module */
 require('./controllers/actions');
-// require('./controllers/ons');
+
+/* Import telegram user-actions module */
+require('./controllers/ons');
 
 bot.catch(
     (err, ctx) => console.log(`Encountered an error: ${ctx.updateType}`, err));

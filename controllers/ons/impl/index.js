@@ -1,7 +1,7 @@
-const { bot } = require('C:\Users\Elyza\Documents\JavascriptFest\BigCareerFest-Workshop-1\configs\telegram\bot.js');
+const { bot } = require('../../../configs/telegram/bot');
+
 bot.on('message',
     ctx => {
         console.log(ctx.update.message.text);
         ctx.reply(ctx.update.message.text);
-
     });

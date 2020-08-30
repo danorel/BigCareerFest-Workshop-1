@@ -77,12 +77,6 @@ bot.action('ActionHandlerThanks',
     }
 )
 
-bot.on('message',
-    ctx => {
-        
-        ctx.reply(ctx.update.message.text);
-
-    });
 
 
 bot.action('ActionHandlerReject')

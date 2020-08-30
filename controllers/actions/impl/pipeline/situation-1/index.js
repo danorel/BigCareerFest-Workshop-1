@@ -39,7 +39,7 @@ bot.action("ActionHandlerDon'tWantPizza",
                 m.inlineKeyboard([
                     m.callbackButton('Ok, you have convinced me!', 'ActionHandlerOrder'),
                     m.callbackButton('No. That’s a great offer, but actually, I wanted burgers...Bye!', 'ActionHandlerThanks')
-    
+
                 ])
             )
         );
@@ -54,7 +54,7 @@ bot.action('ActionHandlerOrder',
         }); // Id and username of the person, who started conversation
         /* Write down new user in temporary storage */
 
-        //ctx.reply(msgYes);
+
 
         ctx.reply(
             msgYes,
@@ -65,21 +65,26 @@ bot.action('ActionHandlerOrder',
                 ])
             )
         );
-        // ctx.replyWithPhoto("images\pizza.jpg");
+
 
     }
 );
-bot.on('message',
-    ctx => {
-        ctx.reply(ctx.update.message.text)
 
-    });
 
 bot.action('ActionHandlerThanks',
     ctx => {
         ctx.reply('Bye! Have a nice day!');
     }
 )
+
+bot.on('message',
+    ctx => {
+        
+        ctx.reply(ctx.update.message.text);
+
+    });
+
+
 bot.action('ActionHandlerReject')
 ctx => {
     const { from: { id, username } } = ctx.update.callback_query;

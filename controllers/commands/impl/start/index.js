@@ -8,7 +8,7 @@ const { msgStart } = require('./config');
 bot.command('start',
     ctx => {
         console.log(ctx.update.message.from);
-        /* Make /start reply keyboard */
+    
         ctx.reply(
             msgStart,
             Extra.HTML().markup((m) =>

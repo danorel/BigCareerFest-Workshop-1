@@ -14,6 +14,7 @@ bot.command('start',
         console.log(ctx.update.message.from);
         visitor
             .event(conf.botName, conf.action, "/start")
+            console.log(conf.botName)
             .send();
 
         ctx.reply(

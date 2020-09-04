@@ -3,12 +3,19 @@ const {
     Extra
 } = require('../../../../configs/telegram/bot');
 
-const { msgStart } = require('./config');
+const conf = require('./config');
+const {
+    visitor
+} = require('../../../../configs/google/analytics');
+
 
 bot.command('start',
     ctx => {
         console.log(ctx.update.message.from);
-    
+        visitor
+            .event(conf.botName, conf.action, "/start")
+            .send();
+
         ctx.reply(
             msgStart,
             Extra.HTML().markup((m) =>

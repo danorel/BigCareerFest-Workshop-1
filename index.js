@@ -30,8 +30,6 @@ const {
     token
 } = require('./configs/telegram/bot');
 
-console.log(token);
-
 /* Import heroku configurations */
 const { url } = require('./configs/heroku');
 

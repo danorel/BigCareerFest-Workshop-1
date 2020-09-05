@@ -4,6 +4,7 @@ const {
 } = require('../../../../../configs/telegram/bot');
 
 const { msgStart, msgYes, msgNo } = require('./config');
+const { visitor }= require('../../../../../configs/google/analytics');
 
 bot.action('ActionHandlerWantPizza',
     ctx => { 

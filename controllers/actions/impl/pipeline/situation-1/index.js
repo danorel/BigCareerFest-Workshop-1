@@ -10,6 +10,7 @@ bot.action('ActionHandlerWantPizza',
     ctx => { 
         visitor
             .event(conf.botName, conf.action, "ActionHandlerOrder")
+            console.log(botName)
             .send();
    
         ctx.reply(

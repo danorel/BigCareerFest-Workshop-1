@@ -5,13 +5,11 @@ const {
 
 const { msgStart, msgYes, msgNo } = require('./config');
 const { visitor }= require('../../../../../configs/google/analytics');
+const conf=require('../situation-1/config');
 
 bot.action('ActionHandlerWantPizza',
     ctx => { 
-        visitor
-            .event(conf.botName, conf.action, "ActionHandlerOrder")
-            console.log(botName)
-            .send();
+       
    
         ctx.reply(
             msgStart,
@@ -26,11 +24,7 @@ bot.action('ActionHandlerWantPizza',
 
 bot.action("ActionHandlerDon'tWantPizza",
     ctx => {
-        visitor
-        .event(conf.botName, conf.action, "ActionHandlerOrder")
-        .send()
-        .event(conf.botName, conf.action, 'ActionHandlerThanks')
-        .send();
+        
         ctx.reply(
             msgNo,
             Extra.HTML().markup((m) =>
@@ -44,6 +38,9 @@ bot.action("ActionHandlerDon'tWantPizza",
 
 bot.action('ActionHandlerOrder',
     ctx => {
+        visitor
+        .event(conf.botName, conf.action, "/orderConfirmation")
+        .send();
         ctx.reply(
             msgYes,
             Extra.HTML().markup((m) =>
@@ -62,7 +59,7 @@ bot.action('ActionHandlerThanks',
 bot.action('ActionHandlerReject',
     ctx => {
         visitor
-        .event(conf.botName, conf.action, "ActionHandlerThanks")
+        .event(conf.botName, conf.action, "ActionHandlerOrder")
         .send();
         ctx.reply(
             msgNo,
